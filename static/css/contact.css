@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Zen';
+    src: url(fonts/ZenDots-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Patrick';
+    src: url(fonts/PatrickHand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Puff';
+    src: url(fonts/DynaPuff-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+:root {
+    --font-color: #d9c4a6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick';
+}
+
+body {
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    padding: 0em 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.contactLeft {
+    flex-basis: 50%;
+    background-image: url(images/contact.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 650px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.contactLeft svg {
+    width: 50px;
+    height: 50px;
+}
+
+.contactLeft svg path {
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.contactLeft svg:hover path {
+    transform: translateY(1em);
+}
+
+.contactRight {
+    flex-basis: 50%;
+    width: 100%;
+    height: 650px;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    background: #222;
+    border-radius: 8px;
+}
+
+.contactUp {
+    flex-basis: 30%;
+}
+
+.contactUp p {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: var(--font-color);
+}
+
+.contactDown {
+    flex-basis: 70%;
+}
+
+.contactDown form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contactDown .input {
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background: #000;
+    border-radius: 8px;
+    color: var(--font-color);
+    font-size: 1.5em;
+}
+
+.contactDown .input::placeholder {
+    color: var(--font-color);
+    text-transform: uppercase;
+}
+
+.contactDown .submit {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: #000;
+    border-radius: 8px;
+    font-size: 1.5em;
+    color: var(--font-color);
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.contactDown .submit:hover {
+    background: #333;
+}
+
+.contactDown textarea {
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    background: #000;
+    font-size: 1.5em;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: var(--font-color);
+}
+
+.contactDown textarea::placeholder {
+    color: var(--font-color);
+    text-transform: uppercase;
+}
+
+span {
+    color: var(--font-color);
+    font-size: 1.25em;
+}
+
+.hidden-btn {
+    display: none;
+}
+
+@media only screen and (max-width:1000px){
+
+    #contact {
+        flex-direction: column;
+    }
+
+    .contactLeft {
+        display: none;
+    }
+
+    .contactRight {
+        flex-basis: unset;
+        width: 100%;
+    }
+
+    .contactRight form {
+        width: 70%;
+    }
+
+    .hidden-btn {
+        display: block;
+        align-self: flex-start;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .contactRight form {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    #contact {
+        padding: 1em;
+    }
+
+    .contactRight {
+        padding: 3em 1.5em;
+    }
+}
