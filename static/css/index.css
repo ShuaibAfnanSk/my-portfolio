@@ -1,0 +1,1196 @@
+@font-face {
+    font-family: 'Zen';
+    src: url(fonts/ZenDots-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Patrick';
+    src: url(fonts/PatrickHand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Puff';
+    src: url(fonts/DynaPuff-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+:root {
+    --font-color: #d9c4a6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick';
+}
+
+body {
+    /* background: #181716; */
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+ul {
+    list-style:  none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.navigation li {
+    background: #222;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 8px;
+}
+
+.navigation li a {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: var(--font-color);
+}
+
+header .logo {
+    position: relative;
+    display: inline-flex;
+    color: #000;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.rightSide {
+    display: flex;
+}
+
+.btns {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.btns ion-icon {
+    font-size: 1.8em;
+    color: var(--bglight);
+}
+
+.btns ion-icon:nth-child(2) {
+    display: none;
+}
+
+.btns .menuToggle ion-icon {
+    display: none;
+}
+
+.btns.active ion-icon:nth-child(2) {
+    display: block;
+}
+
+.btns.active ion-icon:nth-child(1) {
+    display: none;
+}
+
+#home {
+    padding: 5em 3em 5em 3em;
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImg {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.heroImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1.25);
+
+}
+
+.heroTxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.heroTxt h2 {
+    width: 1200px;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Zen';
+}
+
+.heroTxt p {
+    font-size: 1.75em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 900px;
+}
+
+.cta {
+    border: none;
+    background: none;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* ---------------------------------------------------about-------------------------------------------------------------- */
+
+#about {
+    padding: 1em 3em;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.aboutBx {
+    width: 100%;
+    height: 550px;
+    background: #222;
+    display: flex;
+    border-radius: 8px;
+}
+
+.aboutLeft {
+    flex-basis: 35%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image:  url(images/img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutMiddle {
+    flex-basis: 5%;
+    flex-direction: column;
+    display: flex;
+    gap: .75em;
+    padding-top: 2em;
+}
+
+.aboutMiddle ion-icon {
+    color: var(--font-color);
+    font-size: 2em;
+}
+
+.aboutMiddle ion-icon:hover {
+    animation: animateIcon .7s ease-in-out both;
+}
+
+.aboutRight {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    color: var(--font-color);
+    padding: 4em;
+}
+
+.aboutRight h6 {
+    font-size: 2em;
+    text-transform: uppercase;
+    background: rgba(217, 196, 166, 0.75);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aboutRight h4 {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.aboutRight p {
+    font-size: 1.5em;
+    background: rgba(217, 196, 166, 0.75);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aboutLeft::before {
+    content: 'Shuaib Afnan';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    font-size: 1.5em;
+}
+
+.icon {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 500ms opacity ease, 800ms transform ease;
+}
+
+.icon:nth-child(2) {
+    transform: translateY(30px);
+} 
+
+.icon:nth-child(3) {
+    transform: translateY(50px);
+} 
+
+.icon:nth-child(4) {
+    transform: translateY(70px);
+} 
+
+.icon.show {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.imgSkill {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 500ms opacity ease, 1000ms transform ease;
+}
+
+.imgSkillAlt {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 500ms opacity ease, 1000ms transform ease;
+}
+
+.skill.show {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.smallIcon {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 500ms opacity ease, 1000ms transform ease;
+}
+
+.smallIcon:nth-child(2) {
+    transform: translateY(30px);
+}
+
+.smallIcon:nth-child(3) {
+    transform: translateY(50px);
+}
+
+.smallIcon:nth-child(4) {
+    transform: translateY(70px);
+}
+
+.smallIcon.show{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* --------------------------------------------------------------skills----------------------------------------------- */
+
+#skills {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    padding: 1em 3em 1em 3em;
+    flex-direction: column;
+}
+
+.skillBx {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillBx a {
+    width: 49%;
+    height: 450px;
+}
+
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    transition: .3s;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.skill img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.skill::before {
+    content: 'View';
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #efefef;
+    font-size: 1.35em;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: .5s;
+    z-index: 10;
+}
+
+.skill:hover::before {
+    opacity: 1;
+}
+
+.skill img:hover {
+    scale: 1.05;
+}
+
+.movingIcons {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    gap: 4em;
+    overflow-x: hidden;
+}
+
+.movingIcons div img {
+    height: 85px;
+    width: 85px;
+}
+
+/* -------------------------------------------projects---------------------------------------------------------------- */
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    padding: 1.5em 3em 1.5em 3em;
+}
+
+.projectHead {
+    padding: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    color: #000;
+}
+
+.projectHead h5 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-family: 'Zen';
+}
+
+.projectHead p {
+    font-size: 1.5em;
+}
+
+.project {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.imgBx img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.projectTxt {
+    position: absolute;
+    display: flex;
+    gap: 1em;
+    bottom: 5%;
+    left: 2%;
+    padding: 1.5em;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border-radius: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(217, 196, 166) 0px 0px 0px 1px inset;
+}
+
+.projectTxt h2 {
+    font-size: 1.75em;
+    font-family: 'Rocher';
+    text-transform: uppercase;
+}
+
+.projectTxt p {
+    font-size: 1.4em;
+    width: 300px;
+    font-family: 'Patrick';
+}
+
+.button {
+    font-family: inherit;
+    font-size: 18px;
+    background: #000;
+    color: #fff;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: .5em;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: 150px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+}
+
+.button svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+    transition: all 0.3s;
+}
+
+.button .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+}
+
+.button:hover .svg-wrapper {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button:hover svg {
+    transform: rotate(45deg);
+}
+
+/* ----------------------------------------contact-------------------------------------------- */
+
+/* --------------------------------socialIcons------------------------------------------------- */
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.icon {
+    width: 25%;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 2em;
+    color: var(--font-color);
+    background: #222;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 3px -3px 0px inset;
+}
+
+.icon:hover {
+    background: #333;
+}
+
+.iconUp {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: space-between;
+}
+
+.icon i {
+    font-size: 2em;
+}
+
+.iconUp ion-icon {
+    font-size: 2.5em;
+}
+
+.arrow {
+    transition: .3s ease-out;
+}
+
+.iconDown {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.iconDown h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.iconDown p {
+    font-size: 1.2em;
+    background: rgba(217, 196, 166, 0.75);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon:hover .iconUp .arrow {
+    transform: rotate(-30deg);
+}
+
+
+/* -----------------------------------------------hire------------------------------------------------- */
+
+#hireMe {
+    width: 100%;
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+    color: #000;
+    min-height: 600px;
+}
+
+#hireMe h5 {
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-weight: 10;
+}
+
+#hireMe h2 {
+    font-size: 5em;
+    text-transform: uppercase;
+    max-width: 1000px;
+    text-align: center;
+    font-family: 'Zen';
+}
+
+#hireMe p {
+    font-size: 1.5em;
+    max-width: 610px;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.5em;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+    transition: .5s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #000;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    color: #fff;
+    transition-delay: .5s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #000;
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+/* -------------------------------------footer-------------------------------------------------- */
+
+footer {
+    width: 100%;
+    background: #333;
+    padding: 1.5em;
+}
+
+.downFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.downFooter h4 {
+    font-size: 1.25em;
+    color: var(--font-color);
+}
+
+.downFooter button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    background: none;
+    outline: none;
+}
+
+.downFooter button i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--font-color);
+}
+
+@keyframes animateIcon {
+
+    0%,
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    15% {
+        transform: rotate(5deg) translate3d(0, 0, 0) scale(1.2);
+    }
+
+    30% {
+        transform: rotate(-5deg) translate3d(0, 0, 0) scale(1.2);
+    }
+
+    45% {
+        transform: rotate(3deg) translate3d(0, 0, 0) scale(1.2);
+    }
+
+    60% {
+        transform: rotate(-3deg) translate3d(0, 0, 0) scale(1.2);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0) scale(1.2);
+    }
+
+    90% {
+        transform: rotate(-1deg) translate3d(0, 0, 0) scale(1.2);
+    }
+}
+
+nav .fa-solid {
+    display: none;
+}
+
+header .fa-bars {
+    display: none;
+}
+
+/* ---------mediaqueries-------------------------------------------------------------------- */
+
+@media only screen and (max-width:1285px) {
+    .aboutRight h4 {
+        font-size: 2em;
+    }
+
+    .aboutRight h6 {
+        font-size: 1.5em;
+    }
+
+    .movingIcons {
+        gap: 3em;
+    }
+
+    .movingIcons div img {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+
+    .language {
+        flex-wrap: wrap;
+    }
+    .icon {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width:1125px) {
+    .heroTxt h2 {
+        font-size: 3em;
+        width: 800px;
+    }
+
+    .heroTxt p {
+        font-size: 1.5em;
+        width: 700px;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    #hireMe h2 {
+        font-size: 3.5em;
+        max-width: 700px;
+    }
+
+    #hireMe p {
+        font-size: 1.25em;
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width:1025px) {
+    .aboutRight p {
+        font-size: 1.15em;
+    }
+
+    .aboutRight {
+        padding: 2em;
+    }
+
+    .aboutLeft {
+        flex-basis: 45%;
+    }
+
+    .aboutRight {
+        flex-basis: 50%;
+    }
+
+    .movingIcons {
+        gap: 2em;
+    }
+
+    .movingIcons div img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media only screen and (max-width:925px) {
+    .skillBx a  {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .heroTxt h2 {
+        font-size: 2em;
+        width: 600px;
+    }
+
+    .heroTxt p {
+        font-size: 1em;
+        width: 500px;
+    }
+
+    .aboutRight h4 {
+        font-size: 1.5em;
+    }
+
+    .aboutRight h6 {
+        font-size: 1em;
+    }
+
+    .icon {
+        width: 48.5%;
+    }
+}
+
+@media only screen and (max-width:850px) {
+
+    nav .fa-solid {
+        display: block;
+        font-size: 2em;
+    }
+
+    header .fa-bars {
+        display: block;
+        font-size: 2em;
+    }
+
+    header nav {
+        background: var(--font-color);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        padding: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    header nav ul li {
+        background: unset;
+    }
+
+    .navigation li {
+        background: unset;
+    }
+
+    .navigation li a {
+        color: #000;
+    }
+
+    #skills {
+        padding: 1em;
+    }
+
+    .project {
+        height: 500px;
+    }
+
+    #projects {
+        padding: 1em;
+    }
+
+    .projectHead h5 {
+        font-size: 2em;
+    }
+
+    .projectHead p {
+        font-size: 1.25em;
+    }
+
+    .projectTxt h2 {
+        font-size: 1.5em;
+    }
+
+    .projectTxt p {
+        font-size: 1.15em;
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    #about {
+        padding: 1em;
+    }
+
+    .aboutRight h4 {
+        font-size: 1.25em;
+    }
+
+    .aboutRight p {
+        font-size: 1em;
+    }
+
+    .skillBx a {
+        height: 300px;
+    }
+
+    .projectHead h5 {
+        font-size: 2em;
+    }
+
+    .projectHead p {
+        font-size: 1.1em;
+    }
+
+    #hireMe h2 {
+        font-size: 2.5em;
+        max-width: 500px;
+    }
+
+    #hireMe p {
+        font-size: 1.25em;
+        width: 350px;
+    }
+
+    .movingIcons div img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width:570px) {
+
+    .heroTxt h2 {
+        font-size: 1.5em;
+        width: 350px;
+    }
+
+    .heroTxt p {
+        font-size: 1em;
+        width: 350px;
+    }
+
+    .aboutBx {
+        flex-wrap: wrap;
+        height: unset;
+    }
+
+    .aboutLeft {
+        flex-basis: 85%;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        background-image: url(images/img.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .aboutRight {
+        flex-basis: unset;
+    }
+
+    .aboutMiddle {
+        flex-basis: 15%;
+    }
+
+    .icon {
+        width: 100%;
+    }
+
+    .skillBx a {
+        width: 100%;
+    }
+
+    .projectTxt h2 {
+        font-size: 1.25em;
+    }
+
+    .projectTxt p {
+        font-size: 1.1em;
+        width: 200px;
+    }
+
+    #hireMe h2 {
+        font-size: 1.75em;
+        width: 350px;
+    }
+
+    #hireMe p {
+        font-size: 1.15em;
+        width: 300px;
+    }
+
+    .movingIcons div img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .movingIcons {
+        gap: 1em;
+    }
+}
+
+@media only screen and (max-width:500px) {
+
+    footer {
+        padding: 1em;
+    }
+
+    .downFooter h4 {
+        font-size: 1.1em;
+        color: var(--font-color);
+    }
+    
+    .downFooter button {
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5em;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        background: none;
+        outline: none;
+    }
+    
+    .downFooter button i {
+        width: 30px;
+        height: 30px;
+    }
+}
