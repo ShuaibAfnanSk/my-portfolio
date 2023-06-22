@@ -986,6 +986,10 @@ header .fa-bars {
         font-size: 2em;
     }
 
+    header {
+        padding: 15px 1em;
+    }
+    
     header .fa-bars {
         display: block;
         font-size: 2em;
