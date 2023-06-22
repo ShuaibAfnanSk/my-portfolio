@@ -473,6 +473,10 @@ header .fa-bars {
         display: block;
         font-size: 2em;
     }
+    
+    header {
+        padding: 15px 1em;
+    }
 
     header nav {
         background: var(--font-color);
