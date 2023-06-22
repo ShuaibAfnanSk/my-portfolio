@@ -578,6 +578,10 @@ header .fa-bars {
         font-size: 2em;
     }
 
+    header {
+        padding: 15px 1em;
+    }
+
     header nav {
         background: var(--font-color);
         position: fixed;
